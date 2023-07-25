@@ -1,0 +1,32 @@
+<section class="overflow-hidden hero">
+  <div class="content h-100 row">
+    <div
+      class="h-100 col-6 omega d-flex flex-column align-items-center justify-content-center"
+    >
+      <span>&#937;</span>
+      <div *ngIf="gameName" class="d-flex name-game">
+        <p class="name">G</p>
+        <p class="name">O</p>
+        <p class="name">D</p>
+        <p class="name ms-2">O</p>
+        <p class="name me-2">F</p>
+        <p class="name">W</p>
+        <p class="name">A</p>
+        <p class="name">R</p>
+      </div>
+    </div>
+    <div class="h-100 col-6 text d-flex flex-column justify-content-center">
+      <h3>Desarrollo de Software 5</h3>
+      <h4>Proyecto Final</h4>
+      <p>Por: Carlos Solis</p>
+    </div>
+  </div>
+  <div class="waves"></div>
+  <canvas id="canv" width="800" height="450"></canvas>
+  <div *ngIf="leviatan" class="leviatan-container">
+    <img
+      id="leviatan"
+      src="https://static.wikia.nocookie.net/godofwar/images/0/01/LeviathanAxe.png"
+    />
+  </div>
+</section>

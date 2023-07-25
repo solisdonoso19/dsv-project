@@ -1,0 +1,138 @@
+@import "/src/assets/styles/fonts"
+@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap')
+
+@keyframes waves 
+    0% 
+        transform: translate(-50%, -75%) rotate(0deg)
+    
+    
+    100% 
+        transform: translate(-50%, -75%) rotate(360deg)
+    
+@keyframes omega-symbol
+    from 
+        transform: rotate(0deg) scale(0.1)
+       
+    to 
+        transform: rotate(360deg) scale(1)
+
+@keyframes greek-font
+    from 
+        transform: rotate(0deg) scale(0.1), translateY(100px)
+    to 
+        transform: rotate(360deg) scale(1)
+
+@keyframes leviatan
+    from 
+        transform: rotate(0deg)
+    to 
+        transform: rotate(360deg)
+
+@keyframes leviatan-container 
+    from 
+        transform: translateX(0vw)
+    to 
+        transform: translateX(100vw)
+
+
+.hero
+    height: 100vh
+    background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(125, 0, 0) 70.2%)
+    position: relative
+    
+    .omega
+        z-index: 1
+        color: #AD0000
+
+        span 
+            font-family: 'Cardo', serif
+            font-size: 700px
+            background-clip: text
+            -webkit-background-clip: text
+            color: transparent
+            background-image: linear-gradient(300deg, rgb(32, 38, 57) 11.4%, rgb(125, 0, 0) 70.2%)
+            animation: omega-symbol 10s alternate ease-in-out forwards
+        div
+            position: absolute
+            top: 400px
+            font-size: 40px
+            animation: omega-symbol 10s alternate ease-in-out forwards
+            .name
+                font-family: GOD
+                background-clip: text
+                -webkit-background-clip: text
+                color: transparent
+                background-image: linear-gradient(300deg, rgb(32, 38, 57) 11.4%, rgb(125, 0, 0) 70.2%)
+        
+    .text
+        z-index: 1
+        color: white
+        text-align: center
+
+        h3
+            font-family: GOD
+            font-size: 50px
+            font-weight: bold
+            background-clip: text
+            -webkit-background-clip: text
+            color: transparent
+            background-image: linear-gradient(300deg, rgb(32, 38, 57) 11.4%, rgb(125, 0, 0) 70.2%)
+        h4
+            font-family: GOD        
+            font-size: 35px
+            background-clip: text
+            -webkit-background-clip: text
+            color: transparent
+            background-image: linear-gradient(300deg, rgb(32, 38, 57) 11.4%, rgb(125, 0, 0) 70.2%)
+        p
+            font-family: GOD
+            font-size: 25px 
+            background-clip: text
+            -webkit-background-clip: text
+            color: transparent
+            background-image: linear-gradient(300deg, rgb(32, 38, 57) 11.4%, rgb(125, 0, 0) 70.2%)       
+
+    .waves 
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        height: 200px
+        transition: 500ms
+    
+    #canv
+        position: absolute
+        top: 100px
+        left: 9vw
+        animation: greek-font 10s alternate ease-in-out forwards
+
+    .leviatan-container
+        animation: leviatan-container 15s linear infinite
+        position: absolute
+        top: 50px
+    
+        #leviatan
+            height: 150px
+            animation: leviatan 1s linear infinite
+
+    .waves::before,
+    .waves::after 
+        content: ''
+        position: absolute
+        width: 270vw
+        height: 300vw
+        top: -65vw
+        left: 50%
+        transform: translate(-50%, -75%)
+    
+
+    .waves::before 
+        border-radius: 44%
+        background: rgba(217, 217, 217, 1)
+        animation: waves 8s linear infinite
+    
+
+    .waves::after 
+        border-radius: 44%
+        background: rgba(217, 217, 217, 0.5)
+        animation: waves 15s linear infinite
