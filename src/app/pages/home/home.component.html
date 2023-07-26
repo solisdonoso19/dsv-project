@@ -1,32 +1,149 @@
-<section class="overflow-hidden hero">
-  <div class="content h-100 row">
-    <div
-      class="h-100 col-6 omega d-flex flex-column align-items-center justify-content-center"
-    >
-      <span>&#937;</span>
-      <div *ngIf="gameName" class="d-flex name-game">
-        <p class="name">G</p>
-        <p class="name">O</p>
-        <p class="name">D</p>
-        <p class="name ms-2">O</p>
-        <p class="name me-2">F</p>
-        <p class="name">W</p>
-        <p class="name">A</p>
-        <p class="name">R</p>
+<section class="body">
+  <section class="overflow-hidden hero">
+    <div class="content h-100 row">
+      <div
+        class="h-100 col-6 omega d-flex flex-column align-items-center justify-content-center"
+      >
+        <span>&#937;</span>
+        <div *ngIf="gameName" class="d-flex name-game">
+          <p class="name">G</p>
+          <p class="name">O</p>
+          <p class="name">D</p>
+          <p class="name ms-2">O</p>
+          <p class="name me-2">F</p>
+          <p class="name">W</p>
+          <p class="name">A</p>
+          <p class="name">R</p>
+        </div>
+      </div>
+      <div class="h-100 col-6 text d-flex flex-column justify-content-center">
+        <h3>Desarrollo de Software 5</h3>
+        <h4>Proyecto Final</h4>
+        <p>Por: Carlos Solis</p>
       </div>
     </div>
-    <div class="h-100 col-6 text d-flex flex-column justify-content-center">
-      <h3>Desarrollo de Software 5</h3>
-      <h4>Proyecto Final</h4>
-      <p>Por: Carlos Solis</p>
+    <div class="waves"></div>
+    <canvas id="canv" width="800" height="450"></canvas>
+    <div *ngIf="leviatan" class="leviatan-container">
+      <img
+        id="leviatan"
+        src="https://static.wikia.nocookie.net/godofwar/images/0/01/LeviathanAxe.png"
+      />
+    </div>
+  </section>
+  <section class="gallery-container">
+    <h1 class="title-gallery">Galeria de laboratorios</h1>
+    <div class="gallery row g-5">
+      <div *ngFor="let c of cards" class="col-4 d-flex align-items-stretch">
+        <div class="card position-relative">
+          <div *ngIf="c.disable" class="disable"></div>
+          <img [src]="c.img" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{ c.title }}</h5>
+            <p class="card-text">
+              {{ c.info }}
+            </p>
+            <button
+              (click)="setInfo(c)"
+              type="button"
+              class="btn"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Ver Mas
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Galeria</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <audio *ngIf="audio" controls>
+          <source src="../../../assets/5/1.wav" type="audio/mpeg" />
+          Tu navegador no soporta la reproducción de audio.
+        </audio>
+        <iframe
+          *ngIf="iframe"
+          src="https://youtube.com/embed/rd7vMjRJ3uE"
+          frameborder="0"
+          style="width: 100%; height: 800px"
+        ></iframe>
+        <div
+          *ngIf="info !== null"
+          id="carouselExampleIndicators"
+          class="carousel slide"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div
+              *ngFor="let i of info; let index = index"
+              [class.active]="index === 0"
+              class="carousel-item active"
+            >
+              <img [src]="i" class="d-block w-100" alt="..." />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer"></div>
     </div>
   </div>
-  <div class="waves"></div>
-  <canvas id="canv" width="800" height="450"></canvas>
-  <div *ngIf="leviatan" class="leviatan-container">
-    <img
-      id="leviatan"
-      src="https://static.wikia.nocookie.net/godofwar/images/0/01/LeviathanAxe.png"
-    />
-  </div>
-</section>
+</div>

@@ -34,10 +34,13 @@
     to 
         transform: translateX(100vw)
 
+.body
+    background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(125, 0, 0) 70.2%)
+  
 
 .hero
     height: 100vh
-    background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(125, 0, 0) 70.2%)
+    background: transparent
     position: relative
     
     .omega
@@ -136,3 +139,41 @@
         border-radius: 44%
         background: rgba(217, 217, 217, 0.5)
         animation: waves 15s linear infinite
+
+.gallery-container
+    //background: transparent
+    padding: 50px
+    .title-gallery
+        color: rgba(217, 217, 217) 
+        font-family: GOD
+        text-align: center
+    .gallery
+        .col-4
+            .card
+                width: 100%
+                background-color: rgba(217, 217, 217) 
+                font-family: GOD
+                transition: all 1s ease
+                img
+                    max-height: 300px
+                button 
+                    color: white
+                    font-family: GOD
+                    background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(125, 0, 0) 70.2%)
+                h5, p    
+                    font-family: GOD
+                    background-clip: text
+                    -webkit-background-clip: text
+                    color: transparent
+                    background-image: linear-gradient(300deg, rgb(32, 38, 57) 11.4%, rgb(125, 0, 0) 70.2%)  
+                &:hover
+                    transform: scale(1.1)
+                .disable
+                    position: absolute
+                    width: 100%
+                    height:100%
+                    background-color: rgba(0,0,0,0.3)
+                    backdrop-filter: blur(2px)
+.modal
+    .modal-title
+        font-family: GOD
